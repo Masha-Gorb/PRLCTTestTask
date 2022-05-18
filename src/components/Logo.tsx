@@ -1,4 +1,4 @@
-import githubLogoWhite from './githubLogoWhite.svg'
+import githubLogoWhite from '../asserts/githubLogoWhite.svg'
 import styled from "styled-components";
 
 const StyledLogo = styled.div`
