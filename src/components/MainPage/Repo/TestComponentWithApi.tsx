@@ -11,5 +11,5 @@ export const TestComponent = () => {
 
   }, [])
 
-  return <div> here are my name: {JSON.stringify(state)}</div>
+  return <div> TestComponent1: {JSON.stringify(state)}</div>
 }

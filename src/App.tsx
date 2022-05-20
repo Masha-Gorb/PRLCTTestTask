@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Header} from "./components/Header";
-import {TestComponent} from "./components/MainPage/Repo/TestComponentWithApi";
+import {MainPage2} from "./components/MainPage/MainPage2";
 import {MainPage} from "./components/MainPage/MainPage";
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
     <div className="App">
       <Header/>
       <MainPage/>
-      <TestComponent/>
-
+      {/*<MainPage2/>*/}
     </div>
   );
 }

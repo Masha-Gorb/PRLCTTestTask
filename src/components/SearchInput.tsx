@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import {getRepos} from "./actions/repos";
 import {useDispatch} from "react-redux";
 
 const StyledInput = styled.input`
@@ -20,7 +19,6 @@ export const SearchInput = () => {
   const dispatch = useDispatch()
   const [searchValue, setSearchValue] = useState('')
   const SearchHandler = () => {
-    alert(searchValue)
     setSearchValue('')
     // dispatch(getRepos(searchValue))
   }
