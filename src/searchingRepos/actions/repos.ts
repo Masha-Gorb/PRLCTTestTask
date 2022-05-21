@@ -1,5 +1,5 @@
 import axios from "axios";
-import {setReposAC} from "../../reducers/ReposReducer";
+import {setReposAC} from "../reducers/ReposReducer";
 
 export const getRepos = (searchQuery = 'react') => {
   return async (dispatch: any) => {

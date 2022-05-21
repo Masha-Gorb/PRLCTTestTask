@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
 import {useDispatch} from "react-redux";
+import {fetchUsers} from "../store/action-creators/user";
 
 const StyledInput = styled.input`
   margin-right: 762px;
@@ -16,11 +17,11 @@ const StyledInput = styled.input`
 `
 
 export const SearchInput = () => {
-  const dispatch = useDispatch()
-  const [searchValue, setSearchValue] = useState('')
+  const [username, setSearchValue] = useState('')
   const SearchHandler = () => {
     setSearchValue('')
-    // dispatch(getRepos(searchValue))
+    // @ts-ignore
+    fetchUsers(username)
   }
 
   return (
@@ -28,7 +29,7 @@ export const SearchInput = () => {
       <StyledInput
         type="text"
         defaultValue='           Enter GitHub username'
-        value={searchValue}
+        value={username}
         onChange={(e) => setSearchValue(e.currentTarget.value) }
       />
       <button onClick={() => SearchHandler()}>Search</button>

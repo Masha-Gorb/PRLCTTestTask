@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
-import {useDispatch, useSelector} from "react-redux";
-import {getRepos} from "../actions/repos";
-import {Repo} from "./Repo/Repo";
+import {useActions} from "../../hooks/useActions";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
+import {fetchUsers} from "../../store/action-creators/user";
 
 const StyledMainPage = styled.div` 
   display: flex;
@@ -12,39 +12,45 @@ const StyledMainPageContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 80%;
-  background-color: #a1e6ff;
+  background-color: #d4a9ff;
 `
 
 export const MainPage = () => {
-  // @ts-ignore
-  const repos = useSelector(state => state.repos.items)
-  const dispatch = useDispatch()
-  const [searchValue, setSearchValue] = useState('')
+  const {users, error, loading} = useTypedSelector(state => state.user)
+  const {fetchUsers} = useActions()
+
+  const [username, setSearchValue] = useState('Masha-Gorb')
   const SearchHandler = () => {
-    alert(searchValue)
-    console.log(repos)
+    fetchUsers(username)
     setSearchValue('')
-    // @ts-ignore
-    dispatch(getRepos(searchValue))
   }
+
   useEffect(() => {
-    // @ts-ignore
-    dispatch(getRepos())
+    fetchUsers(username)
   }, [])
+
+  if (loading) {
+    return <h1>Идет загрузка...</h1>
+  }
+  if (error) {
+    return <h1>{error}</h1>
+  }
 
   return <StyledMainPage>
     <StyledMainPageContainer>
-      here will be main page content
-      <input type="text"
-             defaultValue='           Enter GitHub username'
-             value={searchValue}
-             onChange={(e) => setSearchValue(e.currentTarget.value) }/>
+      <input
+        type="text"
+        defaultValue='           Enter GitHub username'
+        value={username}
+        onChange={(e) => setSearchValue(e.currentTarget.value) }/>
       <button onClick={() => SearchHandler()}>Search</button>
 
-      <div>
-        {repos.map((repos:any) =>
-          <Repo repo={repos}/>)}
-      </div>
+      <h3>
+        {users.name}
+      </h3>
+      <a href={users.htmlUrl}>{users.login}</a>
+      <div>{users.followers} followers</div>
+      <div>{users.following} following</div>
 
     </StyledMainPageContainer>
   </StyledMainPage>
