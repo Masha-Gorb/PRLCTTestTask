@@ -20,14 +20,15 @@ const StyledOneRepoContainer = styled.div`
 `
 
 export const Repos = (props: ReposPropsType) => {
-  const {page, loading, repos, per_page} = useTypedSelector(state => state.repos)
+  const {page, loading, repos} = useTypedSelector(state => state.repos)
   const {fetchRepos, setReposPage} = useActions()
   const pages = [1, 2, 3, 4, 5]
 
   const username = props.username
   useEffect(() => {
-    fetchRepos(page, per_page, username)
-  }, [page])
+    fetchRepos(username)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (loading) {
     return <h1>Идет загрузка...</h1>
