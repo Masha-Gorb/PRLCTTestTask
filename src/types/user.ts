@@ -2,6 +2,7 @@ export interface Users {
   name: ''
   login: ''
   htmlUrl: ''
+  avatar_url: ''
   followers: number
   following: number
 }

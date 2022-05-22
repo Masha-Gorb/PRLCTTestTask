@@ -3,6 +3,9 @@ import {Dispatch} from "redux";
 import axios from "axios";
 
 export const fetchUsers = (username: string) => {
+  if (username === '') {
+    username = 'gaearon'
+  }
   return async (dispatch: Dispatch<UserAction>) => {
     try {
       dispatch({type: UserActionTypes.FETCH_USERS})

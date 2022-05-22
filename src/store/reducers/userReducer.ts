@@ -5,6 +5,7 @@ const initialState: UserState = {
     name: '',
     login: '',
     htmlUrl: '',
+    avatar_url: '',
     followers: 0,
     following: 0
   },
@@ -21,6 +22,7 @@ export const userReducer = (state = initialState, action: UserAction): UserState
           name: '',
           login: '',
           htmlUrl: '',
+          avatar_url: '',
           followers: 0,
           following: 0
         }
@@ -33,6 +35,7 @@ export const userReducer = (state = initialState, action: UserAction): UserState
           name: '',
           login: '',
           htmlUrl: '',
+          avatar_url: '',
           followers: 0,
           following: 0
         }
