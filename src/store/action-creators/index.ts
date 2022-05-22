@@ -1,8 +1,9 @@
-
 import * as ReposActionCreators from './repos'
 import * as UserActionCreators from './user'
 
-export default {
+const ActionCreators = {
   ...ReposActionCreators,
   ...UserActionCreators
 }
+
+export default ActionCreators;
