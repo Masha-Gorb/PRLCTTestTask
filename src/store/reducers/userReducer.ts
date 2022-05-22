@@ -4,10 +4,11 @@ const initialState: UserState = {
   users: {
     name: '',
     login: '',
-    htmlUrl: '',
+    html_url: '',
     avatar_url: '',
     followers: 0,
-    following: 0
+    following: 0,
+    public_repos: 0
   },
   loading: false,
   error: null
@@ -21,10 +22,11 @@ export const userReducer = (state = initialState, action: UserAction): UserState
         loading: true, error: null, users: {
           name: '',
           login: '',
-          htmlUrl: '',
+          html_url: '',
           avatar_url: '',
           followers: 0,
-          following: 0
+          following: 0,
+          public_repos: 0
         }
       }
     case UserActionTypes.FETCH_USERS_SUCCESS:
@@ -34,10 +36,11 @@ export const userReducer = (state = initialState, action: UserAction): UserState
         loading: false, error: action.payload, users: {
           name: '',
           login: '',
-          htmlUrl: '',
+          html_url: '',
           avatar_url: '',
           followers: 0,
-          following: 0
+          following: 0,
+          public_repos: 0
         }
       }
     default:

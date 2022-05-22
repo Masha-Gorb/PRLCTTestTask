@@ -1,10 +1,11 @@
 export interface Users {
   name: ''
   login: ''
-  htmlUrl: ''
+  html_url: ''
   avatar_url: ''
   followers: number
-  following: number
+  following: number,
+  public_repos: number
 }
 
 export interface UserState {
