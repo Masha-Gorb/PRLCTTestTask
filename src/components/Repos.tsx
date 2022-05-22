@@ -20,28 +20,24 @@ const StyledOneRepoContainer = styled.div`
 `
 
 export const Repos = (props: ReposPropsType) => {
-  const {page, error, loading, repos, per_page} = useTypedSelector(state => state.repos)
+  const {page, loading, repos, per_page} = useTypedSelector(state => state.repos)
   const {fetchRepos, setReposPage} = useActions()
   const pages = [1, 2, 3, 4, 5]
 
   const username = props.username
   useEffect(() => {
     fetchRepos(page, per_page, username)
-  }, [page])
+  }, [])
 
   if (loading) {
     return <h1>Идет загрузка...</h1>
   }
-  // if (error) {
-  //   return <h1>{error}</h1>
-  // }
-
   return (
     <StyledReposPageContainer>
       <h1>Repositories ({props.reposCount})</h1>
       {repos.map(repo =>
         <StyledOneRepoContainer key={repo.id}>
-          <h3><a href={repo.html_url} target="_blank">{repo.name}</a></h3>
+          <h3><a href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a></h3>
           <span>{repo.description}</span>
         </StyledOneRepoContainer>
       )}

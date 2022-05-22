@@ -37,7 +37,7 @@ export const UserPage = (props: UserPagePropsType) => {
       <h3>
         {props.name}
       </h3>
-      <a href={props.loginUrl} target="_blank">{props.login}</a>
+      <a href={props.loginUrl} target="_blank" rel="noreferrer">{props.login}</a>
       <div>{props.followers} followers</div>
       <div>{props.following} following</div>
     </StyledUserPageContainer>
