@@ -27,7 +27,7 @@ export const Repos = (props: ReposPropsType) => {
   const username = props.username
   useEffect(() => {
     fetchRepos(page, per_page, username)
-  }, [])
+  }, [page])
 
   if (loading) {
     return <h1>Идет загрузка...</h1>
