@@ -17,11 +17,25 @@ const StyledMainPageContainer = styled.div`
   align-items: start;
   width: 100%;
 `
+const StyledLoader = styled.div`
+  margin-left: 600px;
+  margin-top: 200px;
+  border: 16px solid #f3f3f3; 
+  border-top: 16px solid #3498db; 
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`
 export const MainPage = () => {
   const {users, error, loading} = useTypedSelector(state => state.user)
 
   if (loading) {
-    return <h1>Идет загрузка...</h1>
+    return <StyledLoader>Идет загрузка...</StyledLoader>
   }
   if (error) {
     return <ErrorPage error={error}/>
