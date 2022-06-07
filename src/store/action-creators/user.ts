@@ -10,9 +10,9 @@ export const getUsers = (username: string) => {
     try {
       dispatch({type: UserActionTypes.FETCH_USERS})
       const response = await axios.get(`https://api.github.com/users/${username}`)
-      setTimeout(() => {
+      if (response.status === 200) {
         dispatch({type: UserActionTypes.FETCH_USERS_SUCCESS, payload: response.data})
-      }, 500)
+      }
     } catch (e) {
       dispatch({
         type: UserActionTypes.FETCH_USERS_ERROR,

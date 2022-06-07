@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SearchIcon from "../asserts/SearchIcon.svg";
 
 const StyledStartPageIcon = styled.div`
+  
   position: absolute;
   margin-top: 190px;
   left: 20.83%;
@@ -31,5 +32,6 @@ export const StartPage = () => {
       <img alt={'icon'} src={SearchIcon}/>
       </StyledStartPageIcon>
     <StyledStartPageText>Start with searching a GitHub user</StyledStartPageText>
+
   </>
 }
