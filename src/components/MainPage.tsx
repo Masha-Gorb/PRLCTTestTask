@@ -11,11 +11,19 @@ const StyledMainPage = styled.div`
   flex-direction: column;
   align-items: start;
   background-color: #E5E5E5;
+  @media (max-width: 425px) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `
 const StyledMainPageContainer = styled.div`
   display: flex;
   align-items: start;
   width: 100%;
+  @media (max-width: 425px) {
+    flex-direction: column;
+    align-items: start;
+  }
 `
 const StyledLoader = styled.div`
   margin-left: 600px;
@@ -25,7 +33,7 @@ const StyledLoader = styled.div`
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; 
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

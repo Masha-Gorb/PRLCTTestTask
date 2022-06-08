@@ -22,6 +22,10 @@ const StyledInput = styled.input`
   font-weight: 400;
   font-size: 14px;
   color: #808080;
+  @media (max-width: 320px) {
+    width: 200px;
+    margin-right: 10px;
+  }
 `
 
 export const Header = () => {

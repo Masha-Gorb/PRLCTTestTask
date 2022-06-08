@@ -15,8 +15,11 @@ const StyledReposPageContainer = styled.div`
 `
 const StyledOneRepoContainer = styled.div`
   background-color: white;
-  width: 870px;
+  width: 700px;
   margin-top: 24px;
+  @media (max-width: 320px) {
+    width: 300px;
+  }
 `
 
 export const Repos = (props: ReposPropsType) => {

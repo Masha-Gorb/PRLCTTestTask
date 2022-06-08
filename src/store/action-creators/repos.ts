@@ -11,7 +11,7 @@ export const fetchRepos = (username: string) => {
       })
       setTimeout(() => {
         dispatch({type: ReposActionTypes.FETCH_REPOS_SUCCESS, payload: response.data})
-      }, 500)
+      }, 100)
     } catch (e) {
       dispatch({
         type: ReposActionTypes.FETCH_REPOS_ERROR,

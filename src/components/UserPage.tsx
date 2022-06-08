@@ -20,14 +20,19 @@ const StyledUserPageContainer = styled.div`
   flex-direction: column;
   align-items: start;
   width: 85%;
-  height: 800px;
+  height: 400px;
   margin-left: 300px;
 `
 const StyledImg = styled.img`   
   border-radius: 50%;
   height: 280px;
   width: 280px;
-  margin-top: 40px; 
+  margin-top: 40px;
+  @media (max-width: 320px) {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+  }
 `
 
 export const UserPage = (props: UserPagePropsType) => {
