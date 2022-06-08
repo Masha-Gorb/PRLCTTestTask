@@ -26,6 +26,10 @@ const StyledInput = styled.input`
     width: 200px;
     margin-right: 10px;
   }
+  @media (max-width: 425px) {
+    width: 200px;
+    margin-right: 10px;
+  }
 `
 
 export const Header = () => {

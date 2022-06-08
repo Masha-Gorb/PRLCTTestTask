@@ -20,6 +20,10 @@ const StyledOneRepoContainer = styled.div`
   @media (max-width: 320px) {
     width: 300px;
   }
+  @media (max-width: 425px) {
+    width: 300px;
+    margin-left: 10px;
+  }
 `
 
 export const Repos = (props: ReposPropsType) => {

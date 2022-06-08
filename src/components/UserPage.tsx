@@ -20,7 +20,7 @@ const StyledUserPageContainer = styled.div`
   flex-direction: column;
   align-items: start;
   width: 85%;
-  height: 400px;
+  height: 500px;
   margin-left: 300px;
 `
 const StyledImg = styled.img`   
