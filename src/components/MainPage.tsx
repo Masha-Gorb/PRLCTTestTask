@@ -43,7 +43,7 @@ export const MainPage = () => {
   const {users, error, loading} = useTypedSelector(state => state.user)
 
   if (loading) {
-    return <StyledLoader>Идет загрузка...</StyledLoader>
+    return <StyledLoader/>
   }
   if (error) {
     return <ErrorPage error={error}/>

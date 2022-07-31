@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import SearchIcon from "../asserts/SearchIcon.svg";
 
 const StyledStartPageIcon = styled.div`
   
@@ -29,7 +28,6 @@ const StyledStartPageText = styled.h2`
 export const StartPage = () => {
   return <>
     <StyledStartPageIcon>
-      <img alt={'icon'} src={SearchIcon}/>
       </StyledStartPageIcon>
     <StyledStartPageText>Start with searching a GitHub user</StyledStartPageText>
 

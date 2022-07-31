@@ -27,9 +27,8 @@ const StyledOneRepoContainer = styled.div`
 `
 
 export const Repos = (props: ReposPropsType) => {
-  const {page, loading, repos} = useTypedSelector(state => state.repos)
-  const {fetchRepos, setReposPage} = useActions()
-  const pages = [1, 2, 3, 4, 5]
+  const {loading, repos} = useTypedSelector(state => state.repos)
+  const {fetchRepos} = useActions()
 
   const username = props.username
   useEffect(() => {
@@ -49,16 +48,6 @@ export const Repos = (props: ReposPropsType) => {
           <span>{repo.description}</span>
         </StyledOneRepoContainer>
       )}
-      <div style={{display: "flex"}}>
-        {pages.map(p =>
-          <div
-            onClick={() => setReposPage(p)}
-            style={{border:p === page ? '2px solid green' : '1px solid gray', padding: 10}}
-          >
-            {p}
-          </div>
-        )}
-      </div>
     </StyledReposPageContainer>
   );
 };
